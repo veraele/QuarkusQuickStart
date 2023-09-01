@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  rest_server:
+    image: amazoncorretto:11.0.20-alpine3.16
+    volumes:
+      - ../:/files
+    ports:
+      - "5005:5005"
+      - "3300:3300"
+    command: >
+      sh -c "cd /files &&
+      java -jar ./target/quarkus-app/quarkus-run.jar"
