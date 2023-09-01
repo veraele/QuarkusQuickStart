@@ -9,4 +9,5 @@ services:
       - "3300:3300"
     command: >
       sh -c "cd /files &&
+      ./mvnw -DskipTests=true package &&
       java -jar ./target/quarkus-app/quarkus-run.jar"
